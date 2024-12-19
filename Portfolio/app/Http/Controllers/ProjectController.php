@@ -13,7 +13,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $query = Project::query();
+
+        $project = $query->paginate(10);
+
+        return inertia('Project/index');
     }
 
     /**
